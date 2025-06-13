@@ -6,7 +6,6 @@ const cors = require('cors');
 const path = require("path");
 
 const databaseMiddleware = require('./middlewares/databaseMiddleware');
-const timeMiddleware = require('./middlewares/timeMiddleware');
 const authMiddleware = require('./middlewares/authMiddleware');
 const authorizeRole = require('./middlewares/roleMiddleware');
 
@@ -35,7 +34,6 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 app.use(databaseMiddleware);
-app.use(timeMiddleware);
 
 
 
