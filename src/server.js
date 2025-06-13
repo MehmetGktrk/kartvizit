@@ -11,6 +11,7 @@ async function startServer() {
         await connectDB();
     } catch (err) {
         console.error('Veritabanına Bağlanamadı')
+        process.exit(1);
     }
     try {
         app.listen(config.port, '0.0.0.0', () => {
