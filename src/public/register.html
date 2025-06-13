@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Dijital Kartvizit</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="register-card">
+            <!-- Logo ve Başlık -->
+            <div class="register-header">
+                <div class="logo">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h1>Hesap Oluşturun</h1>
+                <p>Dijital kartvizit dünyasına katılın</p>
+            </div>
+
+            <!-- Register Form -->
+            <form id="registerForm" class="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Ad</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input 
+                                type="text" 
+                                id="firstName" 
+                                name="firstName" 
+                                placeholder="Adınız" 
+                                required
+                                autocomplete="given-name"
+                            >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Soyad</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input 
+                                type="text" 
+                                id="lastName" 
+                                name="lastName" 
+                                placeholder="Soyadınız" 
+                                required
+                                autocomplete="family-name"
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-posta Adresi</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="ornek@email.com" 
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefon Numarası</label>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            name="phone" 
+                            placeholder="+90 5XX XXX XX XX" 
+                            required
+                            autocomplete="tel"
+                        >
+                    </div>
+                </div>
+
+               <div class="form-group">
+                    <label for="firmaSelect">Firma</label>
+                    <div class="input-group">
+                        <i class="fas fa-building"></i>
+                        <select id="firmaSelect" class="firmaSelect">
+                            <option value="">Platform Seçin</option>
+                           
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="••••••••" 
+                            required
+                            autocomplete="new-password"
+                        >
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Şifre Tekrar</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            name="confirmPassword" 
+                            placeholder="••••••••" 
+                            required
+                            autocomplete="new-password"
+                        >
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms" name="terms" >
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">
+                            <a href="#" class="link">Kullanım Koşulları</a> ve 
+                            <a href="#" class="link">Gizlilik Politikası</a>'nı kabul ediyorum
+                        </span>
+                    </label>
+                </div>
+
+               
+
+                <button type="submit" class="btn-register">
+                    <span>Kayıt Ol</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                
+            </form>
+
+            <!-- Giriş Yap Linki -->
+            <div class="register-footer">
+                <p>Zaten hesabınız var mı? <a href="login.html">Giriş yapın</a></p>
+            </div>
+        </div>
+
+        <!-- Sağ Taraf - Bilgi Paneli -->
+        <div class="info-panel">
+            <div class="info-content">
+                <h2>Neden Dijital Kartvizit?</h2>
+                <p>Geleneksel kartvizitleri geride bırakın, dijital çağa adım atın.</p>
+                
+                <div class="benefits">
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h3>Çevre Dostu</h3>
+                            <p>Kağıt israfını önleyin, doğayı koruyun</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Güncellenebilir</h3>
+                            <p>Bilgilerinizi istediğiniz zaman güncelleyin</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-infinity"></i>
+                        </div>
+                        <div>
+                            <h3>Sınırsız Paylaşım</h3>
+                            <p>Tek bir link ile herkese ulaşın</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Güvenli</h3>
+                            <p>Verileriniz güvende, kontrolünüzde</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"Dijital kartvizit sayesinde müşterilerimle iletişimim çok daha profesyonel!"</p>
+                    <div class="testimonial-author">
+                        <strong>Mehmet Göktürk</strong>
+                        <span>Yazılım Geliştirici</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bildirim -->
+    <div id="notification" class="notification"></div>
+    <script src="/js/utils.js"></script>
+    <script src="/js/register.js"></script>
+    <script src="/"></script>
+</body>
+</html> 

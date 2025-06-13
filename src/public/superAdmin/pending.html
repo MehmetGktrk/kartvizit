@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - Dijital Kartvizit</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/adminPlus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sol Menü -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-id-card"></i>
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="dashboard" class="nav-item " data-page="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Genel Bakış</span>
+                </a>
+                <a href="cards" class="nav-item " data-page="cards">
+                    <i class="fas fa-address-card"></i>
+                    <span>Kartvizitler</span>
+                </a>
+                <a href="pending" class="nav-item active" data-page="pending">
+                    <i class="fas fa-clock"></i>
+                    <span>Onay Bekleyenler</span>
+                    <!-- <span class="badge">3</span> -->
+                </a>
+                <!-- <a href="statics" class="nav-item" data-page="statistics">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>İstatistikler</span>
+                </a> -->
+                <a href="users" class="nav-item" data-page="users">
+                    <i class="fas fa-users"></i>
+                    <span>Kullanıcılar</span>
+                </a>
+
+                <a href="companies" class="nav-item" >
+                    <i class="fas fa-building"></i>
+                    <span>Firmalar</span>
+                </a>
+
+                <a href="admins" class="nav-item " >
+                    <i class="fas fa-user-shield"></i>
+                    <span>Adminler</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/40" alt="Admin" class="user-avatar">
+                    <div class="user-details">
+                        <span class="user-name">superAdmin</span>
+                        <span class="user-role">Yönetici</span>
+                    </div>
+                </div>
+                <button  class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <button class="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 id="pageTitle">Genel Bakış</h1>
+                
+            </header>
+
+            <!-- İçerik Alanı -->
+            <div class="content-area">
+                <!-- Dashboard Sayfası -->
+                
+
+                <!-- Kullanıcılar Sayfası -->
+                <div id="users">
+                    <!-- <div class="page-header">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            Yeni Kullanıcı Ekle
+                        </button>
+                    </div> -->
+
+                    <div class="users-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kullanıcı</th>
+                                    <th>Firma</th>
+                                    <th>E-posta</th>
+                                    <th>Telefon</th>
+                                    <th>Tarih</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Kullanıcılar buraya gelecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                
+            </div>
+        </main>
+    </div>
+
+    <!-- İstatistik Modal -->
+    <div class="modal" id="statsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detaylı İstatistikler</h2>
+                <button class="close-btn" onclick="closeStatsModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Modal içeriği buraya gelecek -->
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="./js/pending.js"></script>
+    <script src="./js/logout.js"></script>
+
+</body>
+</html> 

@@ -1,0 +1,20 @@
+# node_modules directory
+node_modules/
+
+# log files
+*.log
+
+# temporary files related to operating systems and editors
+.DS_Store
+Thumbs.db
+
+# environment variable files (if they contain sensitive information)
+.env
+
+# built package files
+dist/
+build/
+
+# other temporary files
+*.swp 
+*.swo

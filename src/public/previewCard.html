@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartvizit Düzenle</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <!-- Düzenleme Butonu -->
+            <a href="editCard" class="edit-button">
+                <i class="fas fa-cog"></i>
+                <span>Kartviziti Düzenle</span>
+            </a>
+            
+            <!-- Üst Kısım - Arka Plan -->
+            <div class="card-header">
+                <div class="header-pattern"></div>
+            </div>
+            
+            <!-- Profil Fotoğrafı -->
+            <div class="profile-section">
+                <div class="profile-image-wrapper">
+                    <img src="indir.png" alt="Profil Fotoğrafı" class="profile-image" id="profileImage">
+                </div>
+            </div>
+            
+            <!-- Kişisel Bilgiler -->
+            <div class="info-section">
+                <h1 class="name" id="fullName">Mehmet Göktürk</h1>
+                <p class="position" id="position">Yazılım Geliştirici</p>
+                
+                <!-- Açıklama/Biyografi -->
+                <div class="description-section">
+                    <p class="description" id="description">Merhaba! Ben Mehmet, tutkulu bir yazılım geliştiriciyim. Modern web teknolojileri ve mobil uygulama geliştirme konularında uzmanım.</p>
+                </div>
+                
+                <!-- İletişim Bilgileri -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+905551234567" id="personalPhone">+90 555 123 45 67</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-building"></i>
+                        <a href="tel:+902121234567" id="workPhone">+90 212 123 45 67</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:mehmet@example.com" id="email">mehmet@example.com</a>
+                    </div>
+                </div>
+                
+                <!-- Sosyal Medya -->
+                <div class="social-media">
+                    <!-- <a href="https://linkedin.com" target="_blank" class="social-link" id="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link" id="twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" id="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link" id="github">
+                        <i class="fab fa-github"></i>
+                    </a> -->
+                </div>
+                
+                <!-- Eylem Butonları -->
+                <div class="action-buttons">
+                    <button id="saveContactButton" class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i>
+                        Kişilere Ekle
+                    </button>
+                    <button class="btn btn-secondary" onclick="shareCard()">
+                        <i class="fas fa-share-alt"></i>
+                        Paylaş
+                    </button>
+                   
+                </div>
+                
+                <!-- QR Kod Butonu -->
+                <div class="qr-button-container">
+                    <button class="btn btn-qr" onclick="showQRCode()">
+                        <i class="fas fa-qrcode"></i>
+                        QR Kod
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- QR Kod Modalı -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-content">
+            <div class="qr-modal-header">
+                <h2>QR Kod</h2>
+                <button class="close-btn" onclick="closeQRModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="qr-modal-body">
+                <div id="qrcode"></div>
+                <p class="qr-info">Bu QR kodu taratarak kartviziti görüntüleyebilirsiniz</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- QR Code kütüphanesi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/previewCard.js"></script>
+</body>
+</html> 

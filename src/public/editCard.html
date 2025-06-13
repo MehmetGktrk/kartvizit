@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartvizit Düzenle</title>
+    <link rel="stylesheet" href="/css/editCard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Kartvizit Düzenle</h1>
+            <a href="previewCard" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Geri Dön
+            </a>
+        </div>
+
+        <form id="editForm" class="edit-form">
+            <!-- Kişisel Bilgiler -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>
+                    Kişisel Bilgiler
+                </h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label data-key="isim" for="isim">Ad</label>
+                        <input  type="text" id="isim" placeholder="Ad" >
+                    </div>
+                    <div class="form-group">
+                        <label data-key="soyad" for="soyad">Soyad</label>
+                        <input  type="text" id="soyad" placeholder="Soyad" >
+                    </div>
+                    <div class="form-group">
+                        <label data-key="pozisyon" for="pozisyon">Pozisyon</label>
+                        <input  type="text" id="pozisyon" placeholder="Pozisyon" >
+                    </div>
+                    <div class="form-group">
+                        <label data-key="dogumGunu" for="dogumGunu">Doğum Günü</label>
+                        <input  type="date" id="dogumGunu">
+                    </div>
+                    <div class="form-group full-width">
+                        <label data-key="aciklama" for="aciklama">Açıklama</label>
+                        <textarea  id="aciklama" rows="4" placeholder="Kendiniz hakkında kısa bir açıklama yazın..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label data-key="profilResmi" for="profilResmi">Profil Fotoğrafı URL</label>
+                        <input  type="url" id="profilResmi" placeholder="https://example.com/foto.jpg veya indir.png">
+                        <small class="form-hint">Boş bırakırsanız varsayılan resim (indir.png) kullanılır</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İletişim Bilgileri -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-phone"></i>
+                    İletişim Bilgileri
+                </h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label data-key="kisiselTelefon" for="kisiselTelefon">Kişisel Telefon</label>
+                        <input  type="tel" id="kisiselTelefon" placeholder="+90 555 123 45 67">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="isTelefonu" for="isTelefonu">İş Telefonu</label>
+                        <input  type="tel" id="isTelefonu" placeholder="+90 212 123 45 67">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="acikEmail" for="eposta">E-posta</label>
+                        <input  type="email" id="eposta" placeholder="ornek@email.com" >
+                    </div>
+                    <div class="form-group">
+                        <label data-key="adres" for="adres">Adres</label>
+                        <input  type="text" id="adres" placeholder="Şehir, Ülke">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="faks" for="faks">Faks</label>
+                        <input  type="tel" id="faks" placeholder="+90 212 123 45 68">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sosyal Medya -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-share-alt"></i>
+                    Sosyal Medya
+                </h2>
+                <div id="socialMediaContainer" class="social-media-container">
+
+<!-- 
+                    <div class="social-item" data-platform="facebook">
+                        <div class="social-content">
+                            <div class="social-icon">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <div class="social-input-group">
+                                <label>Facebook</label>
+                                <input type="url" id="editfacebook" placeholder="Facebook profil linki" value="">
+                            </div>
+                            <div class="social-actions">
+                                <label class="toggle-small">
+                                    <input type="checkbox" id="facebookVisible" checked>
+                                    <span class="slider-small"></span>
+                                </label>
+                                <button type="button" class="remove-social" onclick="removeSocialMedia('facebook')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                
+                <!-- Yeni sosyal medya ekleme -->
+                <div class="add-social-media">
+                    <select id="newSocialPlatform" class="social-select">
+                        <option value="">Platform Seçin</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="tiktok">TikTok</option>
+                        <option value="pinterest">Pinterest</option>
+                        <option value="whatsapp">WhatsApp</option>
+                        <option value="telegram">Telegram</option>
+                        <option value="discord">Discord</option>
+                        <option value="medium">Medium</option>
+                        <option value="behance">Behance</option>
+                        <option value="dribbble">Dribbble</option>
+                    </select>
+                    <button id="addSocial" type="button" class="btn btn-add">
+                        <i class="fas fa-plus"></i>
+                        Ekle
+                    </button>
+                </div>
+            </div>
+
+            <!-- vCard Ayarları -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-address-card"></i>
+                    vCard Detayları
+                </h2>
+                <p class="section-description">Kişilere Ekle butonuna tıklandığında kaydedilecek detaylı bilgiler</p>
+                <div class="form-grid">
+                    
+                    <div class="form-group">
+                        <label data-key="onEk" for="onEk">Ön Ek</label>
+                        <input  type="text" id="onEk" placeholder="Dr. Doç. Av.  vb.">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label data-key="unvan" for="unvan">Ünvan</label>
+                        <input  type="text" id="unvan" placeholder="Proje Yöneticisi, Geliştirici, vb.">
+                    </div> -->
+                    
+                    <!-- <div class="form-group">
+                        <label data-key="calistigiBirim" for="calistigiBirim">Çalıştığı Birimin Adı</label>
+                        <input  type="text" id="calistigiBirim" placeholder="Birim Adı">
+                    </div> -->
+                    <div class="form-group">
+                        <label data-key="sirketAdi" for="sirketAdi">Şirket Adı</label>
+                        <input  type="text" id="sirketAdi" placeholder="Şirket Adı">
+                    </div>
+                    
+                    <!-- <div class="form-group">
+                        <label data-key="cagriCihazi" for="cagriCihazi">Çağrı Cihazı</label>
+                        <input  type="text" id="cagriCihazi" placeholder="Çağrı Cihazı">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="isMobilNo" for="isMobilNo">İş Mobil Numarası</label>
+                        <input  type="text" id="isMobilNo" placeholder="İş Mobil Numarası">
+                    </div> -->
+                    
+
+                    <div class="form-group">
+                        <label data-key="website" for="website">Web Sitesi Linki</label>
+                        <input  type="text" id="website" placeholder="Web Sitesi Linki">
+                    </div>
+
+<!--                     
+                    <div class="form-group full-width">
+                        <label data-key="kategori" for="kategori">Kategoriler</label>
+                        <input  type="text" id="kategori" placeholder="İş, Arkadaş, Aile (virgülle ayırın)">
+                        <small class="form-hint">Kişiyi kategorize etmek için virgülle ayrılmış etiketler</small>
+                    </div> -->
+                    <div class="form-group full-width">
+                        <label data-key="not" for="note">Notlar</label>
+                        <textarea  id="note" rows="3" placeholder="vCard'a eklenecek özel notlar... (Örnek: Şirket Aracı Plakası, Şirket Kaşe Bilgileri)"></textarea>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <!-- Adres Detayları -->
+            <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-map-marked-alt"></i>
+                    Adres Detayları
+                </h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label data-key="sokak" for="sokak">Sokak/Cadde</label>
+                        <input  type="text" id="sokak" placeholder="Sokak ve kapı no">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="ilce" for="sehir">İlçe</label>
+                        <input  type="text" id="ilce" placeholder="İlçe">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="il" for="il">İl/Eyalet</label>
+                        <input  type="text" id="il" placeholder="İl veya Eyalet">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="postaKodu" for="postaKodu">Posta Kodu</label>
+                        <input  type="text" id="postaKodu" placeholder="34000">
+                    </div>
+                    <div class="form-group">
+                        <label data-key="ulke" for="ulke">Ülke</label>
+                        <input  type="text" id="ulke" placeholder="Türkiye">
+                    </div>
+                   
+                </div>
+            </div>
+
+            <!-- Butonlar -->
+            <div class="form-actions">
+                <button id="saveButton" class="btn btn-primary">
+                    <i class="fas fa-save"></i>
+                    Değişiklikleri Kaydet
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/editCardLast.js"></script>
+
+    <!-- <script src="/js/editCard.js"></script> -->
+    
+</body>
+</html> 
+
+
