@@ -6,8 +6,13 @@ const { connectDB } = require('./database/connection');
 
 
 async function startServer() {
+
     try {
         await connectDB();
+    } catch (err) {
+        console.error('Veritabanına Bağlanamadı')
+    }
+    try {
         app.listen(config.port, '0.0.0.0', () => {
             console.log(`Server Started At: http://localhost:${config.port}/`)
         })
